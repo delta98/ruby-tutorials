@@ -1,19 +1,13 @@
-def walk(direction)
-  if(direction == :north)
-    puts "Walking North.."
-  end
-  if(direction == :east)
-    puts "Walking East.."
-  end
-  if(direction == :south)
-    puts "Walking South.."
-  end
-  if(direction == :west)
-    puts "Walking West.."
-  end
+def call_block
+  puts "Start of block"
+  yield
+  yield
+  puts "End of block"
 end
+call_block { puts "In the block" }
 
-walk(:north);
-walk(:south);
-
-# instead of assigning arbitrary values to constants you can use symbols denoted by a : which handles this for you
+def who_says_what
+  yield("Dave", "hello")
+  yield("Andy", "goodbye")
+end
+who_says_what {|person, phrase| puts "#{person} says #{phrase}"}
