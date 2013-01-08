@@ -1,23 +1,19 @@
-a = ['ant', 'bee', 'cat', 'dog', 'elk']
-a[0] #=> "ant"
-a[3] #=> "dog"
+def walk(direction)
+  if(direction == :north)
+    puts "Walking North.."
+  end
+  if(direction == :east)
+    puts "Walking East.."
+  end
+  if(direction == :south)
+    puts "Walking South.."
+  end
+  if(direction == :west)
+    puts "Walking West.."
+  end
+end
 
-#this is the same:
-a = %w{ant bee cat dog elk} # %w allows you to create a hash/array without the need for '' or ,
+walk(:north);
+walk(:south);
 
-#ruby hashes are similar to arrays however you can specify a literal index instead of a numerical index
-
-inst_section = {
-    'cello' => 'string',
-    'clarinet' => 'woodwind',
-    'drum' => 'percussion',
-    'oboe' => 'woodwind',
-    'trumpet' => 'brass',
-    'violin' => 'string'
-}
-
-p inst_section['obe']
-p inst_section['cello']
-p inst_section['bassoon']
-
-# p works exactly like put except it displays values explicitly
+# instead of assigning arbitrary values to constants you can use symbols denoted by a : which handles this for you
